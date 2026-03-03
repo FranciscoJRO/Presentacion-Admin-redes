@@ -1,0 +1,442 @@
+/* =========================
+   Base
+========================= */
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body{
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color: #0f172a;
+  background: #0b1020;
+}
+
+/* Para que se vea como “presentación” */
+.deck{
+  margin-top: 78px; /* espacio para la barra superior */
+}
+
+/* =========================
+   Barra superior
+========================= */
+.topbar{
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 50;
+  height: 78px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background: rgba(10, 15, 35, 0.78);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255,255,255,0.10);
+}
+
+.topbar-left{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.logo{
+  width: 14px;
+  height: 14px;
+  border-radius: 999px;
+  background: #a78bfa;
+  box-shadow: 0 0 0 5px rgba(167,139,250,0.18);
+  flex: 0 0 auto;
+}
+
+.titleblock{ min-width: 0; }
+.title{
+  color: #f8fafc;
+  font-weight: 800;
+  font-size: 14px;
+  letter-spacing: .2px;
+}
+.subtitle{
+  color: rgba(255,255,255,0.68);
+  font-size: 12px;
+  margin-top: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 52vw;
+}
+
+.topbar-right{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 0 0 auto;
+}
+
+.counter{
+  color: rgba(255,255,255,0.85);
+  font-weight: 750;
+  font-size: 13px;
+  padding: 8px 10px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.10);
+}
+
+.progress{
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  height: 4px;
+  background: rgba(255,255,255,0.08);
+}
+.progress-bar{
+  height: 100%;
+  width: 0%;
+  background: rgba(167,139,250,0.95);
+  transition: width .25s ease;
+}
+
+/* =========================
+   Botones
+========================= */
+.btn{
+  border: 1px solid rgba(255,255,255,0.14);
+  background: rgba(255,255,255,0.06);
+  color: rgba(255,255,255,0.90);
+  padding: 10px 14px;
+  border-radius: 14px;
+  font-weight: 750;
+  cursor: pointer;
+  transition: transform .08s ease, background .2s ease, border-color .2s ease;
+}
+.btn:hover{
+  background: rgba(255,255,255,0.10);
+  border-color: rgba(255,255,255,0.20);
+}
+.btn:active{ transform: translateY(1px); }
+.btn.primary{
+  background: #a78bfa;
+  color: #0b1020;
+  border-color: rgba(167,139,250,0.65);
+}
+.btn.primary:hover{
+  background: #c4b5fd;
+}
+.btn.small{
+  padding: 8px 10px;
+  font-size: 13px;
+  border-radius: 12px;
+}
+
+/* =========================
+   Slides
+========================= */
+.slide{
+  min-height: calc(100vh - 78px);
+  display: grid;
+  place-items: center;
+  padding: 42px 16px;
+  background:
+    radial-gradient(1100px 700px at 12% 14%, rgba(124,58,237,0.30), transparent 55%),
+    radial-gradient(900px 600px at 90% 18%, rgba(59,130,246,0.22), transparent 55%),
+    radial-gradient(900px 500px at 50% 95%, rgba(16,185,129,0.12), transparent 55%),
+    #0b1020;
+}
+
+.wrap{
+  width: min(980px, 100%);
+}
+
+/* Tipografía grande y clara */
+h1,h2,h3{ margin: 0 0 12px; color: #f8fafc; }
+h1{
+  font-size: clamp(30px, 4.2vw, 54px);
+  line-height: 1.05;
+  letter-spacing: -0.6px;
+}
+h2{
+  font-size: clamp(24px, 2.6vw, 36px);
+  letter-spacing: -0.3px;
+}
+h3{
+  font-size: 18px;
+  color: rgba(255,255,255,0.92);
+}
+
+.accent{ color: #a78bfa; }
+.tag{
+  display: inline-flex;
+  padding: 7px 10px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  color: rgba(255,255,255,0.78);
+  font-weight: 750;
+  font-size: 12px;
+  margin-bottom: 12px;
+}
+
+.lead{
+  color: rgba(255,255,255,0.82);
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 0 0 18px;
+  max-width: 75ch;
+}
+
+.big{
+  color: rgba(255,255,255,0.86);
+  font-size: 16px;
+  line-height: 1.75;
+  margin: 0;
+}
+
+/* Tarjetas */
+.card{
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: 18px;
+  padding: 18px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+}
+
+/* Listas legibles */
+.list{
+  margin: 0;
+  padding-left: 18px;
+  color: rgba(255,255,255,0.84);
+  line-height: 1.65;
+}
+.list li{ margin: 8px 0; }
+
+.steps{
+  margin: 0;
+  padding-left: 18px;
+  color: rgba(255,255,255,0.86);
+  line-height: 1.65;
+}
+.steps li{ margin: 10px 0; }
+.steps.compact li{ margin: 8px 0; }
+
+/* Layouts */
+.twoCols{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 10px;
+}
+.threeCols{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 10px;
+}
+
+/* Ajustes móvil */
+@media (max-width: 880px){
+  .twoCols, .threeCols{ grid-template-columns: 1fr; }
+  .subtitle{ max-width: 45vw; }
+}
+
+/* Info del slide 1 */
+.infoGrid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 12px;
+}
+.infoCard{
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: 16px;
+  padding: 14px;
+}
+.infoLabel{
+  color: rgba(255,255,255,0.70);
+  font-size: 12px;
+  font-weight: 750;
+}
+.infoValue{
+  color: rgba(255,255,255,0.90);
+  font-weight: 800;
+  margin-top: 6px;
+}
+@media (max-width: 880px){
+  .infoGrid{ grid-template-columns: 1fr; }
+}
+
+.hint{
+  margin-top: 16px;
+  color: rgba(255,255,255,0.72);
+  font-size: 13px;
+}
+
+/* Niveles */
+.levels{
+  display: grid;
+  gap: 12px;
+  margin-top: 12px;
+}
+.level{
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 14px;
+  align-items: start;
+  padding: 14px;
+  border-radius: 16px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.10);
+}
+.badge{
+  display: inline-grid;
+  place-items: center;
+  height: 34px;
+  border-radius: 999px;
+  font-weight: 900;
+  background: #a78bfa;
+  color: #0b1020;
+}
+.levelTitle{
+  color: rgba(255,255,255,0.92);
+  font-weight: 900;
+}
+.levelText{
+  color: rgba(255,255,255,0.78);
+  margin-top: 4px;
+  line-height: 1.5;
+}
+@media (max-width: 520px){
+  .level{ grid-template-columns: 1fr; }
+  .badge{ width: fit-content; padding: 0 12px; }
+}
+
+/* Píldoras */
+.pillRow{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+.pill{
+  padding: 10px 12px;
+  border-radius: 999px;
+  color: rgba(255,255,255,0.86);
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  font-weight: 750;
+}
+
+/* Llamados */
+.callout{
+  margin-top: 16px;
+  padding: 14px 16px;
+  border-radius: 16px;
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.12);
+  color: rgba(255,255,255,0.84);
+  line-height: 1.6;
+}
+.callout.warn{
+  border-color: rgba(239,68,68,0.35);
+  background: rgba(239,68,68,0.10);
+}
+.callout.ok{
+  border-color: rgba(16,185,129,0.28);
+  background: rgba(16,185,129,0.10);
+}
+
+/* Navegación en el slide */
+.navRow{
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  margin-top: 18px;
+}
+
+/* Footer final */
+.foot{
+  margin-top: 14px;
+  color: rgba(255,255,255,0.55);
+  font-size: 12px;
+}
+
+/* Modo “presentación”: evita que el scroll se vea raro */
+@media (prefers-reduced-motion: no-preference){
+  html{ scroll-behavior: smooth; }
+}
+
+/* =========================
+   ANIMACIONES (entrada por slide)
+   - Se activan cuando el slide está "activo"
+========================= */
+
+/* Estado inicial: elementos invisibles y ligeramente desplazados */
+.slide .wrap > * {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 520ms ease, transform 520ms ease;
+}
+
+/* Animación escalonada (stagger) para que entre bonito */
+.slide .wrap > *:nth-child(1)  { transition-delay: 40ms;  }
+.slide .wrap > *:nth-child(2)  { transition-delay: 90ms;  }
+.slide .wrap > *:nth-child(3)  { transition-delay: 140ms; }
+.slide .wrap > *:nth-child(4)  { transition-delay: 190ms; }
+.slide .wrap > *:nth-child(5)  { transition-delay: 240ms; }
+.slide .wrap > *:nth-child(6)  { transition-delay: 290ms; }
+.slide .wrap > *:nth-child(7)  { transition-delay: 340ms; }
+.slide .wrap > *:nth-child(8)  { transition-delay: 390ms; }
+.slide .wrap > *:nth-child(9)  { transition-delay: 440ms; }
+.slide .wrap > *:nth-child(10) { transition-delay: 490ms; }
+
+/* Cuando el slide está activo: aparecen */
+.slide.is-active .wrap > * {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Animación extra para tarjetas: un "zoom" suave */
+.card{
+  transform: translateY(10px) scale(0.99);
+  transition: transform 520ms ease, opacity 520ms ease, border-color 300ms ease;
+}
+
+/* Cuando el slide está activo, las cards “asientan” */
+.slide.is-active .card{
+  transform: translateY(0) scale(1);
+}
+
+/* Hover en cards para que se sienta vivo (sutil) */
+.card:hover{
+  transform: translateY(-2px) scale(1.01);
+  border-color: rgba(255,255,255,0.18);
+}
+
+/* Animación de la barra de progreso (más suave) */
+.progress-bar{
+  transition: width 320ms ease;
+}
+
+/* Botones: microanimación */
+.btn{
+  transition: transform 90ms ease, background 200ms ease, border-color 200ms ease;
+}
+.btn:active{
+  transform: translateY(1px);
+}
+
+/* Si el usuario prefiere menos movimiento, se desactiva todo */
+@media (prefers-reduced-motion: reduce) {
+  .slide .wrap > *{
+    transition: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+  .card{
+    transition: none !important;
+    transform: none !important;
+  }
+  .progress-bar{
+    transition: none !important;
+  }
+}

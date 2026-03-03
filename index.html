@@ -1,0 +1,518 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Presentación: eTOM en distribución de pan (tipo Bimbo)</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Barra superior (fija) -->
+  <header class="topbar" role="banner">
+    <div class="topbar-left">
+      <div class="logo" aria-hidden="true"></div>
+      <div class="titleblock">
+        <div class="title">Distribución masiva con eTOM</div>
+        <div class="subtitle">Ejemplo tipo Bimbo: reparto, inventario, cobro y control</div>
+      </div>
+    </div>
+
+    <div class="topbar-right">
+      <div class="counter" aria-live="polite">
+        <span id="slideIndex">1</span> / <span id="slideTotal">1</span>
+      </div>
+      <button class="btn small" id="btnFullscreen" type="button" title="Pantalla completa (F)">
+        Pantalla completa
+      </button>
+    </div>
+
+    <div class="progress" aria-hidden="true">
+      <div class="progress-bar" id="progressBar"></div>
+    </div>
+  </header>
+
+  <!-- Contenedor principal -->
+  <main class="deck" id="deck">
+
+    <!-- Slide 1 -->
+    <section class="slide hero" data-title="Inicio">
+      <div class="wrap">
+        <div class="tag">Presentación</div>
+        <h1>Cómo organizar una empresa que <span class="accent">vende y reparte pan</span> a gran escala</h1>
+        <p class="lead">
+          Vamos a explicar eTOM con un caso práctico: una empresa tipo Bimbo que reparte a tiendas y supermercados,
+          cobra (efectivo o tarjeta) y necesita control total.
+        </p>
+
+        <div class="infoGrid">
+          <div class="infoCard">
+            <div class="infoLabel">Equipo</div>
+            <div class="infoValue">1</div>
+          </div>
+          <div class="infoCard">
+            <div class="infoLabel">Materia</div>
+            <div class="infoValue">Administración de Redes</div>
+          </div>
+          <div class="infoCard">
+            <div class="infoLabel">Fecha</div>
+            <div class="infoValue">3 de Marzo de 2026</div>
+          </div>
+        </div>
+
+        <div class="hint">
+          Tip: Usa <strong>→</strong> para avanzar y <strong>←</strong> para regresar.
+        </div>
+
+        <div class="navRow">
+          <button class="btn primary" data-next type="button">Comenzar →</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 2 -->
+    <section class="slide" data-title="¿Qué es eTOM?">
+      <div class="wrap">
+        <h2>¿Qué es eTOM (explicado fácil)?</h2>
+        <div class="twoCols">
+          <div class="card">
+            <h3>Idea principal</h3>
+            <ul class="list">
+              <li>Es un <strong>mapa</strong> para ordenar cómo trabaja una empresa.</li>
+              <li>Divide todo en pasos: desde lo general hasta lo detallado.</li>
+              <li>Así se evita el desorden cuando la operación crece.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>¿Para qué sirve aquí?</h3>
+            <ul class="list">
+              <li>Controlar <strong>repartos</strong> y rutas.</li>
+              <li>Controlar <strong>inventario</strong> (lo cargado, lo vendido y lo devuelto).</li>
+              <li>Controlar <strong>cobros</strong> (efectivo y tarjeta).</li>
+              <li>Medir resultados con indicadores.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="navRow">
+          <button class="btn" data-prev type="button">← Atrás</button>
+          <button class="btn primary" data-next type="button">Siguiente →</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 3 -->
+    <section class="slide" data-title="El problema">
+      <div class="wrap">
+        <h2>¿Cuál es el reto en una empresa tipo Bimbo?</h2>
+
+        <div class="threeCols">
+          <div class="card">
+            <h3>Mucho movimiento</h3>
+            <ul class="list">
+              <li>Miles de tiendas</li>
+              <li>Muchos repartidores</li>
+              <li>Entregas todos los días</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>Producto perecedero</h3>
+            <ul class="list">
+              <li>Caduca rápido</li>
+              <li>Hay devoluciones</li>
+              <li>Puede haber merma</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>Dinero y control</h3>
+            <ul class="list">
+              <li>Cobro en campo</li>
+              <li>Pago con tarjeta</li>
+              <li>Corte y conciliación</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="callout warn">
+          <strong>Sin organización:</strong> se pierde inventario, hay errores en cobros, rutas ineficientes
+          y diferencias en el “corte”.
+        </div>
+
+        <div class="navRow">
+          <button class="btn" data-prev type="button">← Atrás</button>
+          <button class="btn primary" data-next type="button">Siguiente →</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 4 -->
+    <section class="slide" data-title="Niveles">
+      <div class="wrap">
+        <h2>eTOM divide el trabajo en niveles (de lo general a lo detallado)</h2>
+
+        <div class="levels">
+          <div class="level">
+            <div class="badge">Nivel 0</div>
+            <div>
+              <div class="levelTitle">Áreas grandes</div>
+              <div class="levelText">Planeación, Producción, Reparto, Ventas, Finanzas, Soporte</div>
+            </div>
+          </div>
+
+          <div class="level">
+            <div class="badge">Nivel 1</div>
+            <div>
+              <div class="levelTitle">Bloques de trabajo</div>
+              <div class="levelText">Pedidos, Inventario, Rutas, Cobros, Devoluciones</div>
+            </div>
+          </div>
+
+          <div class="level">
+            <div class="badge">Nivel 2</div>
+            <div>
+              <div class="levelTitle">Procesos clave del día a día</div>
+              <div class="levelText">Cargar, Entregar, Cobrar, Registrar devoluciones, Cerrar ruta</div>
+            </div>
+          </div>
+
+          <div class="level">
+            <div class="badge">Nivel 3</div>
+            <div>
+              <div class="levelTitle">Flujo completo</div>
+              <div class="levelText">Paso a paso: pedido → carga → reparto → cobro → cierre</div>
+            </div>
+          </div>
+
+          <div class="level">
+            <div class="badge">Nivel 4</div>
+            <div>
+              <div class="levelTitle">Acciones exactas</div>
+              <div class="levelText">Escanear, firmar, guardar folio de pago, sincronizar datos</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="navRow">
+          <button class="btn" data-prev type="button">← Atrás</button>
+          <button class="btn primary" data-next type="button">Siguiente →</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 5 -->
+    <section class="slide" data-title="Áreas del negocio">
+      <div class="wrap">
+        <h2>Nivel 0: Áreas principales de la empresa</h2>
+
+        <div class="pillRow">
+          <span class="pill">Planeación</span>
+          <span class="pill">Producción</span>
+          <span class="pill">Reparto</span>
+          <span class="pill">Ventas</span>
+          <span class="pill">Finanzas</span>
+          <span class="pill">Soporte (sistemas)</span>
+        </div>
+
+        <div class="callout">
+          Aquí solo vemos el “mapa grande”. Después bajamos a cómo funciona el reparto.
+        </div>
+
+        <div class="navRow">
+          <button class="btn" data-prev type="button">← Atrás</button>
+          <button class="btn primary" data-next type="button">Siguiente →</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 6 -->
+    <section class="slide" data-title="Lo que sostiene el reparto">
+      <div class="wrap">
+        <h2>Lo que sostiene el reparto (Nivel 1 y 2)</h2>
+
+        <div class="twoCols">
+          <div class="card">
+            <h3>Bloques (Nivel 1)</h3>
+            <ul class="list">
+              <li>Repartidores (personas y camiones)</li>
+              <li>Rutas</li>
+              <li>Inventario</li>
+              <li>Pedidos</li>
+              <li>Cobros</li>
+              <li>Devoluciones</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>Procesos clave (Nivel 2)</h3>
+            <ul class="list">
+              <li>Preparar pedido y cargar camión</li>
+              <li>Entregar con evidencia</li>
+              <li>Cobrar y dar comprobante</li>
+              <li>Registrar devoluciones</li>
+              <li>Cerrar ruta y hacer corte</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="navRow">
+          <button class="btn" data-prev type="button">← Atrás</button>
+          <button class="btn primary" data-next type="button">Siguiente →</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 7 -->
+    <section class="slide" data-title="Flujo del día">
+      <div class="wrap">
+        <h2>Flujo del día (paso a paso)</h2>
+
+        <ol class="steps">
+          <li><strong>Se prepara el pedido</strong> por tienda y por ruta.</li>
+          <li><strong>Se carga el camión</strong> y se registra lo que entra.</li>
+          <li><strong>El repartidor sale</strong> con su ruta en su dispositivo.</li>
+          <li><strong>Entrega en tienda</strong> y queda evidencia (firma/ubicación).</li>
+          <li><strong>Registra devoluciones</strong> (caducidad/daño).</li>
+          <li><strong>Cobra</strong> (efectivo o tarjeta) y guarda el comprobante.</li>
+          <li><strong>Regresa</strong> y hace <strong>cierre</strong>: ventas vs pagos vs devoluciones.</li>
+        </ol>
+
+        <div class="navRow">
+          <button class="btn" data-prev type="button">← Atrás</button>
+          <button class="btn primary" data-next type="button">Siguiente →</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 8 -->
+    <section class="slide" data-title="Dispositivo del repartidor">
+      <div class="wrap">
+        <h2>El “diablito” del repartidor (dispositivo de trabajo)</h2>
+
+        <div class="threeCols">
+          <div class="card">
+            <h3>¿Para qué sirve?</h3>
+            <ul class="list">
+              <li>Registrar entregas</li>
+              <li>Registrar devoluciones</li>
+              <li>Guardar evidencia</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>¿Qué trae?</h3>
+            <ul class="list">
+              <li>App de reparto</li>
+              <li>Ubicación (GPS)</li>
+              <li>Escaneo de producto</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Ventaja</h3>
+            <ul class="list">
+              <li>Todo queda registrado</li>
+              <li>Menos errores</li>
+              <li>Mejor control</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="navRow">
+          <button class="btn" data-prev type="button">← Atrás</button>
+          <button class="btn primary" data-next type="button">Siguiente →</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 9 -->
+    <section class="slide" data-title="Base de datos">
+      <div class="wrap">
+        <h2>Base de datos: el “cerebro” del control</h2>
+
+        <div class="twoCols">
+          <div class="card">
+            <h3>Qué guarda</h3>
+            <ul class="list">
+              <li>Tiendas y rutas</li>
+              <li>Repartidores y camiones</li>
+              <li>Producto cargado, vendido y devuelto</li>
+              <li>Ventas y pagos</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Por qué es importante</h3>
+            <ul class="list">
+              <li>Permite saber “qué pasó” en cada entrega</li>
+              <li>Ayuda a evitar pérdidas y confusiones</li>
+              <li>Da reportes para decisiones</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="navRow">
+          <button class="btn" data-prev type="button">← Atrás</button>
+          <button class="btn primary" data-next type="button">Siguiente →</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 10 -->
+    <section class="slide" data-title="Conectividad">
+      <div class="wrap">
+        <h2>Conectividad: cómo se envía la información</h2>
+
+        <div class="card">
+          <ul class="list">
+            <li><strong>En el centro de carga:</strong> WiFi y red interna para trabajar rápido.</li>
+            <li><strong>En la calle:</strong> datos móviles para enviar registros (entrega, cobro, devolución).</li>
+            <li><strong>Si no hay señal:</strong> se guarda y se envía después (no se pierde la info).</li>
+          </ul>
+        </div>
+
+        <div class="callout">
+          La idea es simple: <strong>registrar todo</strong> y que el sistema lo reciba para controlar la operación.
+        </div>
+
+        <div class="navRow">
+          <button class="btn" data-prev type="button">← Atrás</button>
+          <button class="btn primary" data-next type="button">Siguiente →</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 11 -->
+    <section class="slide" data-title="Pago con tarjeta">
+      <div class="wrap">
+        <h2>Pago con tarjeta: cómo se controla sin errores</h2>
+
+        <div class="twoCols">
+          <div class="card">
+            <h3>Pasos del cobro</h3>
+            <ol class="steps compact">
+              <li>Se registra la venta</li>
+              <li>Se cobra con terminal</li>
+              <li>Se obtiene confirmación</li>
+              <li>Se guarda el folio</li>
+              <li>Se incluye en el corte</li>
+            </ol>
+          </div>
+          <div class="card">
+            <h3>Lo importante</h3>
+            <ul class="list">
+              <li>El sistema guarda <strong>folio y monto</strong> (para comprobar).</li>
+              <li>Al final se compara: <strong>ventas vs pagos</strong>.</li>
+              <li>Así se evitan “faltantes” y confusiones.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="navRow">
+          <button class="btn" data-prev type="button">← Atrás</button>
+          <button class="btn primary" data-next type="button">Siguiente →</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 12 -->
+    <section class="slide" data-title="Beneficios">
+      <div class="wrap">
+        <h2>¿Qué gana la empresa con este enfoque?</h2>
+
+        <div class="threeCols">
+          <div class="card">
+            <h3>Más orden</h3>
+            <ul class="list">
+              <li>Todos siguen el mismo proceso</li>
+              <li>Menos improvisación</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Más control</h3>
+            <ul class="list">
+              <li>Se sabe qué se entregó</li>
+              <li>Se sabe qué se devolvió</li>
+              <li>Se sabe qué se cobró</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Mejor operación</h3>
+            <ul class="list">
+              <li>Rutas más eficientes</li>
+              <li>Menos pérdidas</li>
+              <li>Mejores decisiones</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="navRow">
+          <button class="btn" data-prev type="button">← Atrás</button>
+          <button class="btn primary" data-next type="button">Siguiente →</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 13 -->
+    <section class="slide" data-title="Indicadores">
+      <div class="wrap">
+        <h2>Indicadores simples para medir</h2>
+
+        <div class="twoCols">
+          <div class="card">
+            <h3>Ejemplos</h3>
+            <ul class="list">
+              <li>Entregas a tiempo</li>
+              <li>Ventas por ruta</li>
+              <li>Devoluciones por tienda</li>
+              <li>Pérdida por caducidad</li>
+              <li>Diferencias en el corte</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>¿Para qué sirven?</h3>
+            <ul class="list">
+              <li>Detectar problemas rápido</li>
+              <li>Mejorar rutas y tiempos</li>
+              <li>Reducir pérdidas</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="navRow">
+          <button class="btn" data-prev type="button">← Atrás</button>
+          <button class="btn primary" data-next type="button">Siguiente →</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 14 -->
+    <section class="slide" data-title="Cierre">
+      <div class="wrap">
+        <h2>Cierre (conclusión)</h2>
+
+        <div class="card">
+          <p class="big">
+            eTOM ayuda a <strong>ordenar</strong> una operación grande de reparto.
+            Al definir niveles (de lo general a lo detallado), y apoyarse en un dispositivo para el repartidor,
+            una base de datos y un proceso de cobro claro, se logra:
+            <strong>control del inventario</strong>, <strong>control del dinero</strong> y <strong>mejor operación</strong>.
+          </p>
+        </div>
+
+        
+
+        <div class="navRow">
+          <button class="btn" data-prev type="button">← Atrás</button>
+          <button class="btn primary" data-go="0" type="button">Volver al inicio</button>
+        </div>
+
+        <div class="foot">
+          Atajos: ← → | PgUp/PgDn | Home/End | F (pantalla completa)
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
