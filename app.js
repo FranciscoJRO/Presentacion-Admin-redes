@@ -112,4 +112,6 @@
   updateUI(0);
   // Marca el primer slide activo desde el inicio
   setActiveSlide(0);
+
+  
 })();
